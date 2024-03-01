@@ -41,7 +41,7 @@ Content-Type: application/json
 {
     "id": 33,
     "code": "test_fren",
-    "description": "this is a test",
+    "description": "a fren ready to recieve greetings",
     "url": "https://example.com/v1/frens/33/image.png"
 }
 ```
