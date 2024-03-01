@@ -21,6 +21,7 @@ async fn main() {
             .route("/frens/:id/image.png", get(routes::greet_fren))
             .route("/frens/:id/greetings", get(routes::get_greetings))
         )
+        .route("/", get(routes::homepage))
         .fallback(routes::fallback)
         .with_state(database::get_pool().await);
 

@@ -1,6 +1,6 @@
 use std::{net::SocketAddr, str::from_utf8, collections::HashMap};
 
-use axum::{extract::{State, Host, Path, Request, ConnectInfo}, Json, response::{IntoResponse, Response}, http::{HeaderMap, header}, body::Body};
+use axum::{extract::{State, Host, Path, Request, ConnectInfo}, Json, response::{IntoResponse, Response}, http::{HeaderMap, header, StatusCode}, body::Body};
 use sqlx::SqlitePool;
 
 use crate::{schemas::{FrenRequest, Fren, Greeting}, errors::{MailfrenResult, MailfrenError}, database};
@@ -52,4 +52,8 @@ async fn get_fren_with_url(db: &SqlitePool, id: i64, host: String) -> MailfrenRe
 
 pub async fn fallback() -> impl IntoResponse{
     MailfrenError::NotFound
+}
+
+pub async fn homepage() -> impl IntoResponse{
+    (StatusCode::TEMPORARY_REDIRECT, [(header::LOCATION, "https://github.com/xoko14/mailfren")])
 }
