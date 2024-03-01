@@ -10,7 +10,7 @@ Mailfren creates links to a 1x1px transparent png. Information about any request
 
 ## Requirements
 - Rust toolchain
-- Depending on OS openssl/sqlite3 libraries may also be needed for compilling.
+- Depending on OS openssl/sqlite3 libraries may also be needed for compiling.
 
 ## Setup
 Init/migrate database:
@@ -77,4 +77,4 @@ GET /v1/frens/33/greetings
     }
 ]
 ```
-Redacted example. Mailfren was accesible throug a reverse proxy. The request was made through Gmail.
+Redacted example. Mailfren was accesible through a reverse proxy. The request was made through Gmail.
