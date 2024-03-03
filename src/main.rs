@@ -1,9 +1,6 @@
 use std::net::SocketAddr;
 
-use axum::{Router, routing::{post, get}, extract::State, response::IntoResponse};
-use sqlx::{Row, SqlitePool};
-
-use crate::errors::MailfrenError;
+use axum::{Router, routing::{post, get}};
 
 mod errors;
 mod database;

@@ -1,6 +1,6 @@
 use std::{net::SocketAddr, str::from_utf8, collections::HashMap};
 
-use axum::{extract::{State, Host, Path, Request, ConnectInfo}, Json, response::{IntoResponse, Response}, http::{HeaderMap, header, StatusCode}, body::Body};
+use axum::{extract::{State, Host, Path, Request, ConnectInfo}, Json, response::{IntoResponse, Response}, http::{header, StatusCode}};
 use sqlx::SqlitePool;
 
 use crate::{schemas::{FrenRequest, Fren, Greeting}, errors::{MailfrenResult, MailfrenError}, database};

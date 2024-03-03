@@ -1,10 +1,8 @@
-use std::fmt::format;
-
-use sqlx::{Connection, SqlitePool, Pool, Sqlite, AnyPool};
+use sqlx::SqlitePool;
 
 use crate::{schemas::{FrenRequest, Fren, Greeting}, errors::MailfrenResult};
 
-pub async fn get_pool() -> Pool<Sqlite>{
+pub async fn get_pool() -> SqlitePool{
     SqlitePool::connect("sqlite://database.db").await.unwrap()
 }
 
